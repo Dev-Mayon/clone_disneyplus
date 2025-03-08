@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dev-Mayon/clone_disneyplus.git"
+    "url": "git+https://github.com/Dev-Mayon/clone_disneyplus.git"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,10 @@
   "bugs": {
     "url": "https://github.com/Dev-Mayon/clone_disneyplus/issues"
   },
-  "homepage": "https://github.com/Dev-Mayon/clone_disneyplus#readme"
+  "homepage": "https://github.com/Dev-Mayon/clone_disneyplus#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.85.1"
+  }
 }
-
-
