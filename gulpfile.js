@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const imagemin = require('gulp-imagemin');
 
 function styles() {
     return gulp.src('./src/styles/*.scss')
@@ -7,8 +8,16 @@ function styles() {
     .pipe(gulp.dest('./dist/css'));
 }
 
-// Definindo a tarefa 'default' para ser a função 'testeGulp'
-exports.default = styles;
+function images() {
+    return gulp.src('./src/images/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/images'));
+}
+
+
+// Definindo a tarefa 'default' 
+exports.default = gulp.parallel(styles, images);
+
 exports.watch = function() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
 }
